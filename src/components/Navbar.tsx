@@ -22,22 +22,10 @@ const Navbar = () => {
         {/* Navigation Links */}
         <div className="hidden md:flex items-center gap-8">
           <button
-            onClick={() => scrollToSection("serve")}
-            className="label-small link-hover"
-          >
-            Serve
-          </button>
-          <button
             onClick={() => scrollToSection("menu")}
             className="label-small link-hover"
           >
             Menu
-          </button>
-          <button
-            onClick={() => scrollToSection("updates")}
-            className="label-small link-hover"
-          >
-            Updates
           </button>
           <button
             onClick={() => scrollToSection("location")}
