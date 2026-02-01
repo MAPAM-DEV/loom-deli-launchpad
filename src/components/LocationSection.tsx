@@ -1,4 +1,4 @@
-import { MapPin, ExternalLink } from "lucide-react";
+import { MapPin, ExternalLink, Instagram, Facebook } from "lucide-react";
 import { useEffect, useRef } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -66,9 +66,36 @@ const LocationSection = () => {
         </div>
 
         {/* Address */}
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <MapPin className="w-5 h-5 text-muted-foreground" strokeWidth={1.5} />
-          <span className="body-regular">Loom Deli, Dundee</span>
+        <div className="flex flex-col items-center text-center mb-8">
+          <div className="flex items-center gap-3 mb-2">
+            <MapPin className="w-5 h-5 text-muted-foreground" strokeWidth={1.5} />
+            <span className="body-regular font-medium">Loom Deli</span>
+          </div>
+          <p className="body-regular text-muted-foreground">
+            Old Mill Complex, Brown St, Dundee DD1 5EF
+          </p>
+        </div>
+
+        {/* Social Links */}
+        <div className="flex items-center justify-center gap-6 mb-12">
+          <a
+            href="https://www.instagram.com/loomdeli/?hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 border border-border hover:bg-muted transition-all duration-300"
+            aria-label="Instagram"
+          >
+            <Instagram className="w-5 h-5" strokeWidth={1.5} />
+          </a>
+          <a
+            href="https://www.facebook.com/people/Loom-Deli/61583794007733/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 border border-border hover:bg-muted transition-all duration-300"
+            aria-label="Facebook"
+          >
+            <Facebook className="w-5 h-5" strokeWidth={1.5} />
+          </a>
         </div>
 
         {/* Map Links */}
