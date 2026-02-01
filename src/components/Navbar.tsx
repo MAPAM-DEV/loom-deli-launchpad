@@ -1,12 +1,28 @@
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook, ChevronDown } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
 
 const Navbar = () => {
+  const [moreOpen, setMoreOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+    setMoreOpen(false);
   };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setMoreOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -33,6 +49,43 @@ const Navbar = () => {
           >
             Find Us
           </button>
+          
+          {/* More Dropdown */}
+          <div className="relative" ref={dropdownRef}>
+            <button
+              onClick={() => setMoreOpen(!moreOpen)}
+              className="label-small link-hover flex items-center gap-1"
+            >
+              More
+              <ChevronDown 
+                className={`w-4 h-4 transition-transform duration-200 ${moreOpen ? 'rotate-180' : ''}`} 
+                strokeWidth={1.5} 
+              />
+            </button>
+            
+            {moreOpen && (
+              <div className="absolute top-full right-0 mt-2 min-w-[160px] bg-background border border-border shadow-lg">
+                <button
+                  onClick={() => scrollToSection("atmosphere")}
+                  className="w-full text-left px-4 py-3 label-small hover:bg-muted transition-colors border-b border-border"
+                >
+                  About Us
+                </button>
+                <button
+                  onClick={() => scrollToSection("catering")}
+                  className="w-full text-left px-4 py-3 label-small hover:bg-muted transition-colors border-b border-border"
+                >
+                  Catering
+                </button>
+                <button
+                  onClick={() => scrollToSection("join")}
+                  className="w-full text-left px-4 py-3 label-small hover:bg-muted transition-colors"
+                >
+                  Join the Team
+                </button>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Social Icons */}

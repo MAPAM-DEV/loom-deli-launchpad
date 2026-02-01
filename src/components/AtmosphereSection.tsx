@@ -3,11 +3,11 @@ import storefrontImg from "@/assets/storefront.png";
 
 const AtmosphereSection = () => {
   return (
-    <section className="section-light py-24 md:py-32">
+    <section id="atmosphere" className="section-light py-24 md:py-32">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="label-small text-muted-foreground mb-4">The Space</p>
+          <p className="label-small text-muted-foreground mb-4">About Us</p>
           <h2 className="heading-section text-surface-light-foreground">
             A Pleasant Escape
           </h2>
