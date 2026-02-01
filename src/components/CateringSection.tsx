@@ -1,9 +1,9 @@
 import cateringImg from "@/assets/catering.png";
-import { Truck, Users } from "lucide-react";
+import { Truck, Users, Instagram, Mail } from "lucide-react";
 
 const CateringSection = () => {
   return (
-    <section className="section-dark py-24 md:py-32">
+    <section id="catering" className="section-dark py-24 md:py-32">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center max-w-5xl mx-auto">
           {/* Image */}
@@ -38,14 +38,25 @@ const CateringSection = () => {
             </div>
 
             {/* CTA */}
-            <a
-              href="https://www.instagram.com/loomdeli/?hl=en"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline inline-block"
-            >
-              Enquire via Instagram
-            </a>
+            <p className="label-small text-muted-foreground mb-4">Enquire Via</p>
+            <div className="flex items-center gap-4">
+              <a
+                href="https://www.instagram.com/loomdeli/?hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline inline-flex items-center gap-3"
+              >
+                <Instagram className="w-4 h-4" strokeWidth={1.5} />
+                Instagram
+              </a>
+              <a
+                href="mailto:loomdeli@mail.com"
+                className="btn-outline inline-flex items-center gap-3"
+              >
+                <Mail className="w-4 h-4" strokeWidth={1.5} />
+                Email
+              </a>
+            </div>
           </div>
         </div>
       </div>
