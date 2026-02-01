@@ -1,5 +1,5 @@
 import { MapPin, ExternalLink } from "lucide-react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { useEffect, useRef } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -18,6 +18,44 @@ const LOOM_LAT = 56.4617134;
 const LOOM_LNG = -2.9798164;
 
 const LocationSection = () => {
+  const mapContainerRef = useRef<HTMLDivElement | null>(null);
+  const mapRef = useRef<L.Map | null>(null);
+
+  useEffect(() => {
+    if (!mapContainerRef.current) return;
+    if (mapRef.current) return;
+
+    const map = L.map(mapContainerRef.current, {
+      center: [LOOM_LAT, LOOM_LNG],
+      zoom: 16,
+      scrollWheelZoom: false,
+    });
+    mapRef.current = map;
+
+    // Grayscale-ish tiles (free; requires attribution)
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+      subdomains: "abcd",
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      maxZoom: 20,
+    }).addTo(map);
+
+    const marker = L.marker([LOOM_LAT, LOOM_LNG], { icon: customIcon }).addTo(map);
+    marker.bindPopup(
+      `
+        <div style="text-align:center;padding:8px 10px;">
+          <strong style="display:block;margin-bottom:4px;letter-spacing:0.06em;">LOOM DELI</strong>
+          <span style="font-size:12px;opacity:0.85;">Coffee &amp; Deli</span>
+        </div>
+      `.trim(),
+    );
+
+    return () => {
+      map.remove();
+      mapRef.current = null;
+    };
+  }, []);
+
   return (
     <section id="location" className="section-dark py-24 md:py-32">
       <div className="container mx-auto px-6">
@@ -57,24 +95,11 @@ const LocationSection = () => {
 
         {/* Map Container */}
         <div className="max-w-4xl mx-auto border border-border">
-          <MapContainer
-            center={[LOOM_LAT, LOOM_LNG] as L.LatLngExpression}
-            zoom={16}
-            scrollWheelZoom={false}
+          <div
+            ref={mapContainerRef}
             className="h-[400px] md:h-[500px] w-full"
-          >
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker position={[LOOM_LAT, LOOM_LNG] as L.LatLngExpression} icon={customIcon}>
-              <Popup>
-                <div className="text-center p-2">
-                  <strong className="block mb-1">LOOM DELI</strong>
-                  <span className="text-sm">Coffee & Deli</span>
-                </div>
-              </Popup>
-            </Marker>
-          </MapContainer>
+            aria-label="Map showing Loom Deli location"
+          />
         </div>
       </div>
     </section>
