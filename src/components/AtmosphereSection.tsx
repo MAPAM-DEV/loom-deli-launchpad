@@ -1,3 +1,4 @@
+import { ExternalLink } from "lucide-react";
 import atmosphereImg from "@/assets/atmosphere.png";
 import storefrontImg from "@/assets/storefront.png";
 
@@ -41,23 +42,29 @@ const AtmosphereSection = () => {
           <p className="body-regular text-black/70 mb-8">
             We've been featured in The Courier — read what they had to say about us.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://www.thecourier.co.uk/fp/lifestyle/food-drink/5360542/first-look-at-loom-dundee-cafe/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 border border-black text-black hover:bg-black hover:text-white transition-colors text-sm uppercase tracking-[0.15em]"
-            >
-              First Look at Loom
-            </a>
-            <a
-              href="https://www.thecourier.co.uk/fp/lifestyle/food-drink/5396317/review-loom-deli-dundee/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 border border-black text-black hover:bg-black hover:text-white transition-colors text-sm uppercase tracking-[0.15em]"
-            >
-              Loom Deli Review
-            </a>
+          <div className="flex flex-col gap-3 max-w-md mx-auto">
+            <div className="flex items-center justify-between px-4 py-3 border border-black/20">
+              <span className="text-black text-sm">Article 1: First Look at Loom</span>
+              <a
+                href="https://www.thecourier.co.uk/fp/lifestyle/food-drink/5360542/first-look-at-loom-dundee-cafe/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 border border-black text-black hover:bg-black hover:text-white transition-colors"
+              >
+                <ExternalLink className="w-4 h-4" strokeWidth={2} />
+              </a>
+            </div>
+            <div className="flex items-center justify-between px-4 py-3 border border-black/20">
+              <span className="text-black text-sm">Article 2: Loom Deli Review</span>
+              <a
+                href="https://www.thecourier.co.uk/fp/lifestyle/food-drink/5396317/review-loom-deli-dundee/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 border border-black text-black hover:bg-black hover:text-white transition-colors"
+              >
+                <ExternalLink className="w-4 h-4" strokeWidth={2} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
