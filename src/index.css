@@ -40,8 +40,8 @@
     --radius: 0px;
     
     /* Custom tokens */
-    --surface-light: 0 0% 100%;
-    --surface-light-foreground: 0 0% 4%;
+    --surface-light: 24 74% 56%;
+    --surface-light-foreground: 0 0% 98%;
     --divider: 0 0% 25%;
   }
 
