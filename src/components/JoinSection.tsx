@@ -2,9 +2,15 @@ import { Mail } from "lucide-react";
 
 const JoinSection = () => {
   return (
-    <section id="join" className="section-light py-24 md:py-32">
-      <div className="container mx-auto px-6">
-        <div className="max-w-2xl mx-auto text-center">
+    <section id="join" className="section-light py-24 md:py-32 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-16 left-8 w-16 h-1 bg-black/20" />
+      <div className="absolute bottom-16 right-8 w-20 h-1 bg-black/20" />
+      <div className="absolute top-1/2 right-4 w-1 h-16 bg-black/10" />
+      <div className="absolute top-1/3 left-4 w-1 h-12 bg-black/10" />
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-2xl mx-auto text-center border-[3px] border-black p-8 md:p-12 bg-white/50">
           {/* Section Header */}
           <p className="label-small text-black/70 mb-4">Careers</p>
           <h2 className="heading-section text-black mb-6">
@@ -20,7 +26,7 @@ const JoinSection = () => {
           {/* Email CTA */}
           <a
             href="mailto:loomdeli@mail.com"
-            className="btn-outline inline-flex items-center gap-3 text-black border-black hover:bg-black hover:text-white"
+            className="inline-flex items-center gap-3 text-black border-[3px] border-black px-6 py-3 hover:bg-black hover:text-white transition-colors text-sm uppercase tracking-[0.15em] font-medium"
           >
             <Mail className="w-4 h-4" strokeWidth={1.5} />
             loomdeli@mail.com

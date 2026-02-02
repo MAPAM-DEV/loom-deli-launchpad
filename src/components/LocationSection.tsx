@@ -57,8 +57,13 @@ const LocationSection = () => {
   }, []);
 
   return (
-    <section id="location" className="section-dark py-24 md:py-32">
-      <div className="container mx-auto px-6">
+    <section id="location" className="section-dark py-24 md:py-32 relative overflow-hidden">
+      {/* Subtle orange decorative elements */}
+      <div className="absolute top-16 right-10 w-16 h-0.5 bg-foreground/20" />
+      <div className="absolute bottom-20 left-10 w-20 h-0.5 bg-foreground/20" />
+      <div className="absolute top-1/3 right-6 w-0.5 h-16 bg-foreground/15" />
+      
+      <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12">
           <p className="label-small text-muted-foreground mb-4">Visit</p>
@@ -82,7 +87,7 @@ const LocationSection = () => {
             href="https://www.instagram.com/loomdeli/?hl=en"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 border border-border hover:bg-muted transition-all duration-300"
+            className="p-3 border-2 border-foreground/40 hover:bg-foreground hover:text-background transition-all duration-300"
             aria-label="Instagram"
           >
             <Instagram className="w-5 h-5" strokeWidth={1.5} />
@@ -91,7 +96,7 @@ const LocationSection = () => {
             href="https://www.facebook.com/people/Loom-Deli/61583794007733/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 border border-border hover:bg-muted transition-all duration-300"
+            className="p-3 border-2 border-foreground/40 hover:bg-foreground hover:text-background transition-all duration-300"
             aria-label="Facebook"
           >
             <Facebook className="w-5 h-5" strokeWidth={1.5} />
@@ -121,7 +126,7 @@ const LocationSection = () => {
         </div>
 
         {/* Map Container */}
-        <div className="max-w-4xl mx-auto border border-border">
+        <div className="max-w-4xl mx-auto border-2 border-foreground/40">
           <div
             ref={mapContainerRef}
             className="h-[400px] md:h-[500px] w-full"

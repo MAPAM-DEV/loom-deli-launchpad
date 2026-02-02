@@ -4,8 +4,15 @@ import storefrontImg from "@/assets/storefront.png";
 
 const AtmosphereSection = () => {
   return (
-    <section id="atmosphere" className="section-light py-24 md:py-32">
-      <div className="container mx-auto px-6">
+    <section id="atmosphere" className="section-light py-24 md:py-32 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-20 right-12 w-20 h-1 bg-black/20" />
+      <div className="absolute top-24 right-12 w-12 h-1 bg-black/15" />
+      <div className="absolute bottom-20 left-12 w-28 h-1 bg-black/20" />
+      <div className="absolute top-1/3 left-6 w-1 h-20 bg-black/10" />
+      <div className="absolute bottom-1/4 right-6 w-1 h-28 bg-black/10" />
+      
+      <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="heading-section text-black mb-8">About Us</h2>
@@ -18,14 +25,14 @@ const AtmosphereSection = () => {
 
         {/* Images Grid */}
         <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
-          <div className="overflow-hidden border border-border">
+          <div className="overflow-hidden border-[3px] border-black">
             <img
               src={atmosphereImg}
               alt="Coffee and sandwich at Loom Deli"
               className="w-full h-64 md:h-80 object-cover img-industrial hover:scale-105 transition-transform duration-700"
             />
           </div>
-          <div className="overflow-hidden border border-border">
+          <div className="overflow-hidden border-[3px] border-black">
             <img
               src={storefrontImg}
               alt="Loom Deli storefront"
@@ -41,24 +48,24 @@ const AtmosphereSection = () => {
             We've been featured in The Courier — read what they had to say about us.
           </p>
           <div className="flex flex-col gap-3 max-w-md mx-auto">
-            <div className="flex items-center justify-between px-4 py-3 border border-black/20">
+            <div className="flex items-center justify-between px-4 py-3 border-2 border-black/30 bg-black/5">
               <span className="text-black text-sm">Article 1: First Look at Loom</span>
               <a
                 href="https://www.thecourier.co.uk/fp/lifestyle/food-drink/5360542/first-look-at-loom-dundee-cafe/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 border border-black text-black hover:bg-black hover:text-white transition-colors"
+                className="p-2 border-2 border-black text-black hover:bg-black hover:text-white transition-colors"
               >
                 <ExternalLink className="w-4 h-4" strokeWidth={2} />
               </a>
             </div>
-            <div className="flex items-center justify-between px-4 py-3 border border-black/20">
+            <div className="flex items-center justify-between px-4 py-3 border-2 border-black/30 bg-black/5">
               <span className="text-black text-sm">Article 2: Loom Deli Review</span>
               <a
                 href="https://www.thecourier.co.uk/fp/lifestyle/food-drink/5396317/review-loom-deli-dundee/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 border border-black text-black hover:bg-black hover:text-white transition-colors"
+                className="p-2 border-2 border-black text-black hover:bg-black hover:text-white transition-colors"
               >
                 <ExternalLink className="w-4 h-4" strokeWidth={2} />
               </a>
