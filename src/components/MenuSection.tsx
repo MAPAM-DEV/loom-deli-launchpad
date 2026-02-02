@@ -48,7 +48,7 @@ const MenuSection = () => {
         </div>
 
         {/* Note */}
-        <p className="text-center text-muted-foreground text-sm mt-8 max-w-lg mx-auto">
+        <p className="text-center text-muted-foreground text-base md:text-lg mt-8 max-w-lg mx-auto">
           We also offer a variety of sweet treats to go along with your coffee — 
           whether that's to stay in, or to go! Menu items may vary. 
           Follow our socials for daily specials and seasonal updates.

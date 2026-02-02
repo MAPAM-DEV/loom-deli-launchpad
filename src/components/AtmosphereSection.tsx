@@ -7,11 +7,11 @@ const AtmosphereSection = () => {
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="label-small text-muted-foreground mb-4">About Us</p>
-          <h2 className="heading-section text-surface-light-foreground">
+          <p className="label-small text-black/70 mb-4">About Us</p>
+          <h2 className="heading-section text-black">
             A Pleasant Escape
           </h2>
-          <p className="body-regular text-muted-foreground max-w-lg mx-auto mt-6">
+          <p className="body-regular text-black/70 max-w-lg mx-auto mt-6">
             Industrial charm meets cozy comfort. Settle in with your favorite brew 
             and enjoy the carefully curated atmosphere.
           </p>
