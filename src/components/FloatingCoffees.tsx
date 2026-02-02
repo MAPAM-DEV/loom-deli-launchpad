@@ -6,7 +6,7 @@ export const COFFEE_CONFIG = {
   // Number of coffee icons in the pool
   poolSize: 8,
   // Size range in pixels [min, max]
-  sizeRange: [50, 100] as [number, number],
+  sizeRange: [70, 130] as [number, number],
   // Speed range in pixels per frame [min, max]
   speedRange: [0.5, 1.5] as [number, number],
   // Spawn interval in ms (how often a new coffee enters)
@@ -36,12 +36,33 @@ const FloatingCoffees = () => {
   const randomInRange = (min: number, max: number) => 
     Math.random() * (max - min) + min;
 
-  const createCoffee = (id: number): CoffeeInstance => {
+  // Spawn from either top edge (random X) or left edge (random Y)
+  const getSpawnPosition = () => {
+    const spawnFromTop = Math.random() > 0.5;
+    if (spawnFromTop) {
+      // Spawn above screen, random X position
+      return {
+        x: randomInRange(0, window.innerWidth),
+        y: randomInRange(-150, -50),
+      };
+    } else {
+      // Spawn left of screen, random Y position
+      return {
+        x: randomInRange(-150, -50),
+        y: randomInRange(0, window.innerHeight),
+      };
+    }
+  };
+
+  const createCoffee = (id: number, onScreen = false): CoffeeInstance => {
     const size = randomInRange(...COFFEE_CONFIG.sizeRange);
+    const pos = onScreen 
+      ? { x: randomInRange(0, window.innerWidth), y: randomInRange(0, window.innerHeight) }
+      : getSpawnPosition();
     return {
       id,
-      x: randomInRange(-200, -50),
-      y: randomInRange(-200, -50),
+      x: pos.x,
+      y: pos.y,
       size,
       speed: randomInRange(...COFFEE_CONFIG.speedRange),
       opacity: randomInRange(...COFFEE_CONFIG.opacityRange),
@@ -52,10 +73,11 @@ const FloatingCoffees = () => {
 
   const resetCoffee = (coffee: CoffeeInstance): CoffeeInstance => {
     const size = randomInRange(...COFFEE_CONFIG.sizeRange);
+    const pos = getSpawnPosition();
     return {
       ...coffee,
-      x: randomInRange(-200, -50),
-      y: randomInRange(-200, -50),
+      x: pos.x,
+      y: pos.y,
       size,
       speed: randomInRange(...COFFEE_CONFIG.speedRange),
       opacity: randomInRange(...COFFEE_CONFIG.opacityRange),
@@ -65,15 +87,12 @@ const FloatingCoffees = () => {
   };
 
   useEffect(() => {
-    // Initialize pool
+    // Initialize pool - first few start on screen
     const initialPool: CoffeeInstance[] = [];
     for (let i = 0; i < COFFEE_CONFIG.poolSize; i++) {
-      const coffee = createCoffee(i);
-      coffee.active = i < 3; // Start with a few active
-      if (coffee.active) {
-        coffee.x = randomInRange(0, window.innerWidth);
-        coffee.y = randomInRange(0, window.innerHeight);
-      }
+      const onScreen = i < 3;
+      const coffee = createCoffee(i, onScreen);
+      coffee.active = onScreen;
       initialPool.push(coffee);
     }
     setCoffees(initialPool);
