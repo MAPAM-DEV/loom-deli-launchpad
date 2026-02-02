@@ -65,14 +65,17 @@ const LocationSection = () => {
           <h2 className="heading-section">Find Us</h2>
         </div>
 
-        {/* Address */}
+        {/* Address & Hours */}
         <div className="flex flex-col items-center text-center mb-8">
           <div className="flex items-center gap-3 mb-2">
             <MapPin className="w-5 h-5 text-muted-foreground" strokeWidth={1.5} />
             <span className="body-regular font-medium">Loom Deli</span>
           </div>
-          <p className="body-regular text-muted-foreground">
+          <p className="body-regular text-muted-foreground mb-3">
             Old Mill Complex, Brown St, Dundee DD1 5EF
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Mon–Sat: 8am–5pm &nbsp;·&nbsp; Sun: 10am–4pm
           </p>
         </div>
 
