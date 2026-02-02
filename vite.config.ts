@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // base: '/loom-deli-launchpad/',
+  base: '/loom-deli-launchpad/',
   server: {
     host: "::",
     port: 8080,
