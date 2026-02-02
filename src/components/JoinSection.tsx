@@ -3,12 +3,6 @@ import { Mail } from "lucide-react";
 const JoinSection = () => {
   return (
     <section id="join" className="section-light py-24 md:py-32 relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-16 left-8 w-16 h-1 bg-black/20" />
-      <div className="absolute bottom-16 right-8 w-20 h-1 bg-black/20" />
-      <div className="absolute top-1/2 right-4 w-1 h-16 bg-black/10" />
-      <div className="absolute top-1/3 left-4 w-1 h-12 bg-black/10" />
-      
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-2xl mx-auto text-center border-[3px] border-black p-8 md:p-12 bg-white/50">
           {/* Section Header */}

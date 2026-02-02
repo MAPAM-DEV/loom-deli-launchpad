@@ -16,14 +16,6 @@ const MenuSection = () => {
 
   return (
     <section id="menu" className="section-light py-24 md:py-32 relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-12 left-6 w-24 h-1 bg-black/20" />
-      <div className="absolute top-16 left-6 w-16 h-1 bg-black/15" />
-      <div className="absolute bottom-12 right-6 w-32 h-1 bg-black/20" />
-      <div className="absolute bottom-16 right-6 w-20 h-1 bg-black/15" />
-      <div className="absolute top-1/4 right-8 w-1 h-24 bg-black/10" />
-      <div className="absolute bottom-1/3 left-8 w-1 h-32 bg-black/10" />
-      
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">

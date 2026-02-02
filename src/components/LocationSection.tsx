@@ -58,11 +58,6 @@ const LocationSection = () => {
 
   return (
     <section id="location" className="section-dark py-24 md:py-32 relative overflow-hidden">
-      {/* Subtle orange decorative elements */}
-      <div className="absolute top-16 right-10 w-16 h-0.5 bg-foreground/20" />
-      <div className="absolute bottom-20 left-10 w-20 h-0.5 bg-foreground/20" />
-      <div className="absolute top-1/3 right-6 w-0.5 h-16 bg-foreground/15" />
-      
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12">

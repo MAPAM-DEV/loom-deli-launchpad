@@ -5,13 +5,6 @@ import storefrontImg from "@/assets/storefront.png";
 const AtmosphereSection = () => {
   return (
     <section id="atmosphere" className="section-light py-24 md:py-32 relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-20 right-12 w-20 h-1 bg-black/20" />
-      <div className="absolute top-24 right-12 w-12 h-1 bg-black/15" />
-      <div className="absolute bottom-20 left-12 w-28 h-1 bg-black/20" />
-      <div className="absolute top-1/3 left-6 w-1 h-20 bg-black/10" />
-      <div className="absolute bottom-1/4 right-6 w-1 h-28 bg-black/10" />
-      
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
