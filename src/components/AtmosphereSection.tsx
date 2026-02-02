@@ -34,6 +34,32 @@ const AtmosphereSection = () => {
             />
           </div>
         </div>
+
+        {/* Press Mentions */}
+        <div className="mt-16 max-w-2xl mx-auto text-center">
+          <p className="label-small text-black/70 mb-6">In The Press</p>
+          <p className="body-regular text-black/70 mb-8">
+            We've been featured in The Courier — read what they had to say about us.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://www.thecourier.co.uk/fp/lifestyle/food-drink/5360542/first-look-at-loom-dundee-cafe/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 border border-black text-black hover:bg-black hover:text-white transition-colors text-sm uppercase tracking-[0.15em]"
+            >
+              First Look at Loom
+            </a>
+            <a
+              href="https://www.thecourier.co.uk/fp/lifestyle/food-drink/5396317/review-loom-deli-dundee/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 border border-black text-black hover:bg-black hover:text-white transition-colors text-sm uppercase tracking-[0.15em]"
+            >
+              Loom Deli Review
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
