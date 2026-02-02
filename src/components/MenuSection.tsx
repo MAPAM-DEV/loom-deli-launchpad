@@ -15,19 +15,19 @@ const MenuSection = () => {
   };
 
   return (
-    <section id="menu" className="section-dark py-24 md:py-32">
+    <section id="menu" className="section-light py-24 md:py-32">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="label-small text-muted-foreground mb-4">Our Selection</p>
-          <h2 className="heading-section">The Menu</h2>
+          <p className="label-small text-black/70 mb-4">Our Selection</p>
+          <h2 className="heading-section text-black">The Menu</h2>
         </div>
 
         {/* Menu Images Grid */}
         <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
           <button
             onClick={() => openLightbox(menuDrinks, "Loom Deli drinks menu")}
-            className="industrial-card cursor-pointer hover:border-foreground/30 transition-colors group"
+            className="border border-black/30 bg-black/5 p-6 md:p-8 cursor-pointer hover:border-black/50 transition-colors group"
           >
             <img
               src={menuDrinks}
@@ -37,7 +37,7 @@ const MenuSection = () => {
           </button>
           <button
             onClick={() => openLightbox(menuFood, "Loom Deli food menu")}
-            className="industrial-card cursor-pointer hover:border-foreground/30 transition-colors group"
+            className="border border-black/30 bg-black/5 p-6 md:p-8 cursor-pointer hover:border-black/50 transition-colors group"
           >
             <img
               src={menuFood}
@@ -48,7 +48,7 @@ const MenuSection = () => {
         </div>
 
         {/* Note */}
-        <p className="text-center text-muted-foreground text-base md:text-lg mt-8 max-w-lg mx-auto">
+        <p className="text-center text-black/70 text-base md:text-lg mt-8 max-w-lg mx-auto">
           We also offer a variety of sweet treats to go along with your coffee — 
           whether that's to stay in, or to go! Menu items may vary. 
           Follow our socials for daily specials and seasonal updates.
@@ -58,7 +58,7 @@ const MenuSection = () => {
         <div className="flex justify-center gap-4 md:gap-6 mt-8 max-w-md mx-auto">
           <button
             onClick={() => openLightbox(treats1, "Loom Deli sweet treats selection")}
-            className="w-32 h-32 md:w-40 md:h-40 overflow-hidden border border-border cursor-pointer hover:border-foreground/30 transition-colors group"
+            className="w-32 h-32 md:w-40 md:h-40 overflow-hidden border border-black/30 cursor-pointer hover:border-black/50 transition-colors group"
           >
             <img
               src={treats1}
@@ -68,7 +68,7 @@ const MenuSection = () => {
           </button>
           <button
             onClick={() => openLightbox(treats2, "Loom Deli cookies")}
-            className="w-32 h-32 md:w-40 md:h-40 overflow-hidden border border-border cursor-pointer hover:border-foreground/30 transition-colors group"
+            className="w-32 h-32 md:w-40 md:h-40 overflow-hidden border border-black/30 cursor-pointer hover:border-black/50 transition-colors group"
           >
             <img
               src={treats2}
