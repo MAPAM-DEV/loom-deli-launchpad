@@ -8,34 +8,34 @@
 
 @layer base {
   :root {
-    /* Core palette - Stark black/white with warm gray accents */
+    /* Core palette - Black with orange accents */
     --background: 0 0% 4%;
-    --foreground: 0 0% 98%;
+    --foreground: 24 74% 56%;
     
     --card: 0 0% 7%;
-    --card-foreground: 0 0% 98%;
+    --card-foreground: 24 74% 56%;
     
     --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 98%;
+    --popover-foreground: 24 74% 56%;
     
-    --primary: 0 0% 98%;
+    --primary: 24 74% 56%;
     --primary-foreground: 0 0% 4%;
     
     --secondary: 0 0% 14%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary-foreground: 24 74% 56%;
     
     --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 60%;
+    --muted-foreground: 24 74% 45%;
     
-    --accent: 30 60% 50%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 24 74% 56%;
+    --accent-foreground: 0 0% 4%;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 0% 98%;
+    --border: 24 74% 35%;
+    --input: 24 74% 35%;
+    --ring: 24 74% 56%;
     
     --radius: 0px;
     
