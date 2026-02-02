@@ -6,13 +6,13 @@ export const COFFEE_CONFIG = {
   // Number of coffee icons in the pool
   poolSize: 8,
   // Size range in pixels [min, max]
-  sizeRange: [40, 80] as [number, number],
+  sizeRange: [50, 100] as [number, number],
   // Speed range in pixels per frame [min, max]
   speedRange: [0.5, 1.5] as [number, number],
   // Spawn interval in ms (how often a new coffee enters)
-  spawnInterval: 2000,
+  spawnInterval: 1500,
   // Opacity range [min, max]
-  opacityRange: [0.15, 0.35] as [number, number],
+  opacityRange: [0.4, 0.6] as [number, number],
   // Rotation range in degrees [min, max]
   rotationRange: [-30, 30] as [number, number],
 };
@@ -120,7 +120,7 @@ const FloatingCoffees = () => {
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
       {coffees.map(coffee => (
         coffee.active && (
           <img
@@ -135,7 +135,6 @@ const FloatingCoffees = () => {
               top: coffee.y,
               opacity: coffee.opacity,
               transform: `rotate(${coffee.rotation}deg)`,
-              transition: "none",
             }}
           />
         )
