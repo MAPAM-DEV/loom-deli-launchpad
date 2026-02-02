@@ -5,8 +5,8 @@ import coffeeIcon from "@/assets/coffee-icon.png";
 export const COFFEE_CONFIG = {
   // Number of coffee icons in the pool
   poolSize: 8,
-  // Size range in pixels [min, max]
-  sizeRange: [70, 130] as [number, number],
+  // Size multiplier relative to viewport (percentage of smaller dimension)
+  sizeMultiplierRange: [0.08, 0.15] as [number, number],
   // Speed range in pixels per frame [min, max]
   speedRange: [0.5, 1.5] as [number, number],
   // Spawn interval in ms (how often a new coffee enters)
@@ -15,6 +15,13 @@ export const COFFEE_CONFIG = {
   opacityRange: [0.4, 0.6] as [number, number],
   // Rotation range in degrees [min, max]
   rotationRange: [-30, 30] as [number, number],
+};
+
+// Calculate responsive size based on viewport
+const getResponsiveSize = () => {
+  const baseSize = Math.min(window.innerWidth, window.innerHeight);
+  const [minMult, maxMult] = COFFEE_CONFIG.sizeMultiplierRange;
+  return [baseSize * minMult, baseSize * maxMult] as [number, number];
 };
 
 interface CoffeeInstance {
@@ -55,7 +62,7 @@ const FloatingCoffees = () => {
   };
 
   const createCoffee = (id: number, onScreen = false): CoffeeInstance => {
-    const size = randomInRange(...COFFEE_CONFIG.sizeRange);
+    const size = randomInRange(...getResponsiveSize());
     const pos = onScreen 
       ? { x: randomInRange(0, window.innerWidth), y: randomInRange(0, window.innerHeight) }
       : getSpawnPosition();
@@ -72,7 +79,7 @@ const FloatingCoffees = () => {
   };
 
   const resetCoffee = (coffee: CoffeeInstance): CoffeeInstance => {
-    const size = randomInRange(...COFFEE_CONFIG.sizeRange);
+    const size = randomInRange(...getResponsiveSize());
     const pos = getSpawnPosition();
     return {
       ...coffee,
