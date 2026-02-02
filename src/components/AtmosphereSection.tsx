@@ -8,7 +8,7 @@ const AtmosphereSection = () => {
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="heading-hero text-black mb-8">About Us</h2>
+          <h2 className="heading-section text-black mb-8">About Us</h2>
           <p className="body-regular text-black/70 max-w-lg mx-auto">
             Serving quality coffee and fresh deli food from a beautifully restored 
             historic building in the heart of Dundee. Every cup crafted with care, 
