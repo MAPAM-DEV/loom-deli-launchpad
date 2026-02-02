@@ -4,7 +4,7 @@ import coffeeIcon from "@/assets/coffee-icon.png";
 // Configuration for floating coffee animations
 export const COFFEE_CONFIG = {
   // Number of coffee icons in the pool
-  poolSize: 8,
+  poolSize: 24,
   // Size multiplier relative to viewport (percentage of smaller dimension)
   sizeMultiplierRange: [0.08, 0.15] as [number, number],
   // Speed range in pixels per frame [min, max]
