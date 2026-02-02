@@ -15,8 +15,16 @@ const MenuSection = () => {
   };
 
   return (
-    <section id="menu" className="section-light py-24 md:py-32">
-      <div className="container mx-auto px-6">
+    <section id="menu" className="section-light py-24 md:py-32 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-12 left-6 w-24 h-1 bg-black/20" />
+      <div className="absolute top-16 left-6 w-16 h-1 bg-black/15" />
+      <div className="absolute bottom-12 right-6 w-32 h-1 bg-black/20" />
+      <div className="absolute bottom-16 right-6 w-20 h-1 bg-black/15" />
+      <div className="absolute top-1/4 right-8 w-1 h-24 bg-black/10" />
+      <div className="absolute bottom-1/3 left-8 w-1 h-32 bg-black/10" />
+      
+      <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <p className="label-small text-black/70 mb-4">Our Selection</p>
@@ -27,22 +35,22 @@ const MenuSection = () => {
         <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
           <button
             onClick={() => openLightbox(menuDrinks, "Loom Deli drinks menu")}
-            className="border border-black/30 bg-black/5 p-6 md:p-8 cursor-pointer hover:border-black/50 transition-colors group"
+            className="border-[3px] border-black bg-black/5 p-6 md:p-8 cursor-pointer hover:bg-black/10 transition-colors group"
           >
             <img
               src={menuDrinks}
               alt="Loom Deli drinks menu - Hot drinks, iced drinks, and more"
-              className="w-full h-auto group-hover:opacity-90 transition-opacity"
+              className="w-full h-auto border-2 border-black/40 group-hover:opacity-90 transition-opacity"
             />
           </button>
           <button
             onClick={() => openLightbox(menuFood, "Loom Deli food menu")}
-            className="border border-black/30 bg-black/5 p-6 md:p-8 cursor-pointer hover:border-black/50 transition-colors group"
+            className="border-[3px] border-black bg-black/5 p-6 md:p-8 cursor-pointer hover:bg-black/10 transition-colors group"
           >
             <img
               src={menuFood}
               alt="Loom Deli food menu - Signature sandwiches and melts"
-              className="w-full h-auto group-hover:opacity-90 transition-opacity"
+              className="w-full h-auto border-2 border-black/40 group-hover:opacity-90 transition-opacity"
             />
           </button>
         </div>
@@ -58,7 +66,7 @@ const MenuSection = () => {
         <div className="flex justify-center gap-4 md:gap-6 mt-8 max-w-md mx-auto">
           <button
             onClick={() => openLightbox(treats1, "Loom Deli sweet treats selection")}
-            className="w-32 h-32 md:w-40 md:h-40 overflow-hidden border border-black/30 cursor-pointer hover:border-black/50 transition-colors group"
+            className="w-32 h-32 md:w-40 md:h-40 overflow-hidden border-[3px] border-black cursor-pointer hover:bg-black/10 transition-colors group"
           >
             <img
               src={treats1}
@@ -68,7 +76,7 @@ const MenuSection = () => {
           </button>
           <button
             onClick={() => openLightbox(treats2, "Loom Deli cookies")}
-            className="w-32 h-32 md:w-40 md:h-40 overflow-hidden border border-black/30 cursor-pointer hover:border-black/50 transition-colors group"
+            className="w-32 h-32 md:w-40 md:h-40 overflow-hidden border-[3px] border-black cursor-pointer hover:bg-black/10 transition-colors group"
           >
             <img
               src={treats2}

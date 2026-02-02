@@ -3,11 +3,17 @@ import { Truck, Users, Instagram, Mail } from "lucide-react";
 
 const CateringSection = () => {
   return (
-    <section id="catering" className="section-dark py-24 md:py-32">
-      <div className="container mx-auto px-6">
+    <section id="catering" className="section-dark py-24 md:py-32 relative overflow-hidden">
+      {/* Subtle orange decorative elements */}
+      <div className="absolute top-20 left-8 w-12 h-0.5 bg-foreground/20" />
+      <div className="absolute top-24 left-8 w-8 h-0.5 bg-foreground/15" />
+      <div className="absolute bottom-16 right-8 w-16 h-0.5 bg-foreground/20" />
+      <div className="absolute top-1/2 left-4 w-0.5 h-20 bg-foreground/15" />
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center max-w-5xl mx-auto">
           {/* Image */}
-          <div className="overflow-hidden border border-border">
+          <div className="overflow-hidden border-2 border-foreground/40">
             <img
               src={cateringImg}
               alt="Loom Deli catering setup with sandwich platters"
