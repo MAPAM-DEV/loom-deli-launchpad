@@ -17,7 +17,12 @@ const Hero = () => {
       <FloatingCoffees />
       <div className="text-center max-w-4xl mx-auto z-10">
         {/* Main Title */}
-        <h1 className="heading-hero mb-8 animate-fade-in">LOOM DELI</h1>
+        <h1 className="heading-hero mb-4 animate-fade-in">LOOM DELI</h1>
+        
+        {/* Tagline */}
+        <p className="body-large text-muted-foreground mb-8 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          Craft coffee, fresh eats & good vibes
+        </p>
 
         {/* CTA Button */}
         <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
