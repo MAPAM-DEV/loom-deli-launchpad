@@ -1,3 +1,4 @@
+import { ChevronDown } from "lucide-react";
 import FloatingCoffees from "./FloatingCoffees";
 
 const Hero = () => {
@@ -28,7 +29,7 @@ const Hero = () => {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-px h-12 bg-border" />
+        <ChevronDown className="w-8 h-8" strokeWidth={3} />
       </div>
     </section>
   );
