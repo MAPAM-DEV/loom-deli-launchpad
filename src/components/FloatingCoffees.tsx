@@ -4,7 +4,9 @@ import coffeeIcon from "@/assets/coffee-icon.png";
 // Configuration for floating coffee animations
 export const COFFEE_CONFIG = {
   // Number of coffee icons in the pool
-  poolSize: 24,
+  poolSize: 30,
+  // Fraction of pool to spawn immediately on load
+  initialSpawnRatio: 0.2,
   // Size multiplier relative to viewport (percentage of smaller dimension)
   sizeMultiplierRange: [0.08, 0.15] as [number, number],
   // Speed range in pixels per frame [min, max]
@@ -94,10 +96,11 @@ const FloatingCoffees = () => {
   };
 
   useEffect(() => {
-    // Initialize pool - first few start on screen
+    // Initialize pool - spawn initial batch on screen based on ratio
     const initialPool: CoffeeInstance[] = [];
+    const initialCount = Math.floor(COFFEE_CONFIG.poolSize * COFFEE_CONFIG.initialSpawnRatio);
     for (let i = 0; i < COFFEE_CONFIG.poolSize; i++) {
-      const onScreen = i < 3;
+      const onScreen = i < initialCount;
       const coffee = createCoffee(i, onScreen);
       coffee.active = onScreen;
       initialPool.push(coffee);
